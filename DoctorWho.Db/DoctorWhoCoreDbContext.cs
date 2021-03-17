@@ -12,6 +12,7 @@ namespace DoctorWho.Db
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Enemy> Enemys { get; set; }
         public DbSet<Episode> Episodes { get; set; }
+        public DbSet<ViewEpisodes> ViewEpisodes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         => options.UseSqlServer(connectionString);
@@ -19,6 +20,7 @@ namespace DoctorWho.Db
         {
             modelBuilder.Entity<EpisodeCompanion>().HasKey(e => new { e.EpisodeId, e.CompanionId });
             modelBuilder.Entity<EpisodeEnemy>().HasKey(e => new { e.EpisodeId, e.EnemyId });
+            modelBuilder.Entity<ViewEpisodes>().HasNoKey().ToView("viewEpisodes");
             modelBuilder.Entity<Author>().HasData(
                 new Author { AuthorId = 1, AuthorName = "tamer" },
                 new Author { AuthorId = 2, AuthorName = "Fadi" },

@@ -43,7 +43,7 @@ namespace DoctorWho.Db.Migrations
                 AS BEGIN
                   SELECT TOP(3) c.CompanionName, COUNT(*) Companion_count
                   FROM EpisodeCompanion ec
-                  JOIN Companion c
+                  JOIN Companions c
                   ON ec.CompanionId=c.CompanionId
                   GROUP BY c.CompanionId , c.CompanionName
                   ORDER BY Companion_count DESC 
