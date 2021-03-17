@@ -2,7 +2,7 @@
 
 namespace DoctorWho.Db.Migrations
 {
-    public partial class AddFnSpViews : Migration
+    public partial class AddFnSps : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,6 +20,21 @@ namespace DoctorWho.Db.Migrations
                    -- PRINT @val;
                     RETURN @val;
                 END;
+                "
+            );
+            migrationBuilder.Sql(
+                @"CREATE OR ALTER FUNCTION fnEnimes (
+                    @EpisodeId INT
+                )
+                RETURNS VARCHAR(50) AS
+                BEGIN
+                    Declare @val Varchar(MAX); 
+                    SELECT  @val=COALESCE(@val + ', '+ e.EnemyName,e.EnemyName)
+                    FROM Enemys e
+                    JOIN EpisodeEnemy ee
+                    ON e.EnemyId=ee.EnemyId AND ee.EpisodeId=@EpisodeId
+                    RETURN @val;
+                END; 
                 "
             );
             migrationBuilder.Sql(
@@ -41,22 +56,13 @@ namespace DoctorWho.Db.Migrations
                   ORDER BY Enemy_count DESC 
                 END;"
             );
-            migrationBuilder.Sql(
-                @"DROP VIEW IF EXISTS viewEpisodes;
-                GO
-                CREATE VIEW viewEpisodes AS
-                  SELECT a.AuthorName, d.DoctorName, fnCompanion(e.EpisodeId) CompanionName, fnEnemies(e.EpisodeId) EnemyName
-                  FROM Episodes e
-                  JOIN Authors a ON e.AuthorId=a.AuthorId
-                  JOIN Doctors d ON e.DoctorId=d.DoctorId"
-            );
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql("Drop FUNCTION fnCompanion");
-            migrationBuilder.Sql("Drop PROCEDURE spSummariseEpisodes");
-            migrationBuilder.Sql("DROP VIEW viewEpisodes");
+            migrationBuilder.Sql("DROP FUNCTION IF EXISTS fnCompanion");
+            migrationBuilder.Sql("DROP FUNCTION IF EXISTS fnEnimes");
+            migrationBuilder.Sql("DROP PROCEDURE IF EXISTS spSummariseEpisodes");
         }
     }
 }

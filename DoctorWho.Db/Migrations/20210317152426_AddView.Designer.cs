@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DoctorWho.Db.Migrations
 {
     [DbContext(typeof(DoctorWhoCoreDbContext))]
-    [Migration("20210317131104_AddFnSpViews")]
-    partial class AddFnSpViews
+    [Migration("20210317152426_AddView")]
+    partial class AddView
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
