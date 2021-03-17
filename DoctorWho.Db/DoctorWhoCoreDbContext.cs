@@ -1,10 +1,9 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore;
-using DoctorWho.Db;
 
-namespace DoctorWhoCoreDbContext
+namespace DoctorWho.Db
 {
-    public class DoctorWhoContext : DbContext
+    public class DoctorWhoCoreDbContext : DbContext
     {
         private readonly string connectionString =
         "Server=tcp:myserver-tamer.database.windows.net,1433;Initial Catalog=DoctorWhoCore;Persist Security Info=False;User ID=tamer;Password=kegsy5-mydmuj-Conxam;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
