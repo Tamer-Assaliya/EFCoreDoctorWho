@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorWho", "DoctorWho\Doct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorWho.Db", "DoctorWho.Db\DoctorWho.Db.csproj", "{3E7D8D5C-C862-4B8B-AF84-4A14DE95BDD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorWhoCoreDbContext", "DoctorWhoCoreDbContext\DoctorWhoCoreDbContext.csproj", "{A65224C0-94FF-449A-BB11-6415BB3BD4BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{3E7D8D5C-C862-4B8B-AF84-4A14DE95BDD9}.Release|x64.Build.0 = Release|Any CPU
 		{3E7D8D5C-C862-4B8B-AF84-4A14DE95BDD9}.Release|x86.ActiveCfg = Release|Any CPU
 		{3E7D8D5C-C862-4B8B-AF84-4A14DE95BDD9}.Release|x86.Build.0 = Release|Any CPU
+		{A65224C0-94FF-449A-BB11-6415BB3BD4BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A65224C0-94FF-449A-BB11-6415BB3BD4BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A65224C0-94FF-449A-BB11-6415BB3BD4BF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A65224C0-94FF-449A-BB11-6415BB3BD4BF}.Debug|x64.Build.0 = Debug|Any CPU
+		{A65224C0-94FF-449A-BB11-6415BB3BD4BF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A65224C0-94FF-449A-BB11-6415BB3BD4BF}.Debug|x86.Build.0 = Debug|Any CPU
+		{A65224C0-94FF-449A-BB11-6415BB3BD4BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A65224C0-94FF-449A-BB11-6415BB3BD4BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A65224C0-94FF-449A-BB11-6415BB3BD4BF}.Release|x64.ActiveCfg = Release|Any CPU
+		{A65224C0-94FF-449A-BB11-6415BB3BD4BF}.Release|x64.Build.0 = Release|Any CPU
+		{A65224C0-94FF-449A-BB11-6415BB3BD4BF}.Release|x86.ActiveCfg = Release|Any CPU
+		{A65224C0-94FF-449A-BB11-6415BB3BD4BF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
