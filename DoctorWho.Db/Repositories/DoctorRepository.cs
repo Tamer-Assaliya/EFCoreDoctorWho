@@ -36,7 +36,7 @@ namespace DoctorWho.Db
 
         public List<Doctor> GetAllDoctors()
         {
-            var doctors = _context.Doctors.FromSqlRaw("SELECT * FROM Doctors").ToList();
+            var doctors = _context.Doctors.Select(d => d).ToList();
             return doctors;
         }
     }
